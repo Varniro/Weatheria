@@ -39,8 +39,7 @@ def index():
             lon = loc.json()[0]["lon"]
             cityName = loc.json()[0]['name']
         else:
-            loc = requests.get("    ")
-            # print("http://api.openweathermap.org/geo/1.0/zip?zip="+ city+","+ countryCode+"&limit=1&appid=afc1fe3c57e4c1db24b3eec58c29582c")
+            loc = requests.get("http://api.openweathermap.org/geo/1.0/zip?zip="+ city+","+ countryCode+"&limit=1&appid="+os.getenv("OpenWeather_Key"))
             lat = loc.json()["lat"]
             lon = loc.json()["lon"]
             cityName = loc.json()['name']
